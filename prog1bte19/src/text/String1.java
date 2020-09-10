@@ -23,6 +23,7 @@ public class String1 {
 		String part= mening.substring(24);
 		String part2= mening.substring(4,6);
 
+		mening.toUpperCase()
 		System.out.println(part2);
 
 
