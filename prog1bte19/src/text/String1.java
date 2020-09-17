@@ -14,6 +14,8 @@ public class String1 {
 
 		int längd =ord2.length();
 
+
+
 		System.out.println(längd);
 
 		char ettTecken=ord2.charAt(0);
@@ -23,7 +25,7 @@ public class String1 {
 		String part= mening.substring(24);
 		String part2= mening.substring(4,6);
 
-		mening.toUpperCase()
+		mening.toUpperCase();
 		System.out.println(part2);
 
 
