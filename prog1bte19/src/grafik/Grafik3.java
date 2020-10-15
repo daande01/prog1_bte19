@@ -26,8 +26,8 @@ public class Grafik3 extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
 
-				l1.setText("du har klickat på knapp 1");
 			}
 		});
 
