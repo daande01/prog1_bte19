@@ -45,6 +45,7 @@ public class Bil {
 	public static void main(String[] args) {
 
 		Bil b1=new Bil();  // referensvariabel som heter b1 av typen Bil samt skapande av objekt
+
 		new Bil(100000, 200,"saab",Color.CYAN);
 		b1.färgByte();
 		System.out.println(b1.toString());
