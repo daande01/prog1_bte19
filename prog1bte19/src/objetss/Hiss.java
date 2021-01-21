@@ -41,6 +41,30 @@ public class Hiss {
 				riktning=0;
 			}
 
+			if (v < våning) {
+
+				for (int i = våning; i > v; i--) {
+					riktning=-1;
+					våning--;
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+
+						e.printStackTrace();
+
+					}
+					System.out.println("v:" + våning + " r:" + riktning);
+
+				}
+				riktning=0;
+			}
+
+
+
+
+
+
+
 		}
 		System.out.println("du är framme v:" + våning + " r:" + riktning);
 	}
@@ -60,7 +84,7 @@ public class Hiss {
 		h1.moveTo(3);
 
 		new Hiss();
-
+		h1.moveTo(1);
 	}
 
 }
