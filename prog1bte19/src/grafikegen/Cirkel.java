@@ -25,6 +25,7 @@ public class Cirkel extends JComponent implements KeyListener{
 
 
 	public Cirkel(Color c) {
+		addKeyListener(this);
 		cc=c;
 		this.setPreferredSize(new Dimension(wx,wy));
 		x = 0;
@@ -95,7 +96,15 @@ public class Cirkel extends JComponent implements KeyListener{
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+
+		int key = e.getKeyCode();
+
+		if (key == KeyEvent.VK_UP) {
+
+			y=y-5;
+
+		}
+
 
 	}
 	@Override
@@ -108,5 +117,13 @@ public class Cirkel extends JComponent implements KeyListener{
 		// TODO Auto-generated method stub
 
 	}
+
+	@Override
+	public boolean isFocusTraversable() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+
 
 }
