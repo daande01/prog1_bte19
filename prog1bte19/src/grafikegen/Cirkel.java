@@ -28,8 +28,8 @@ public class Cirkel extends JComponent implements KeyListener{
 		addKeyListener(this);
 		cc=c;
 		this.setPreferredSize(new Dimension(wx,wy));
-		x = 0;
-		y = 0;
+		x = 2;
+		y = 2;
 		Timer t = new Timer(10, e -> {
 
 			update();
@@ -52,21 +52,28 @@ public class Cirkel extends JComponent implements KeyListener{
 
 			yv*=-1;
 
+			y=450;
 
 		}
 		if (x>=(wx-(r*2))) {
 
 			xv*=-1;
 
+			x=450;
+
 		}
 		if (y<=0) {
 
 			yv*=-1;
 
+			y=0;
+
 		}
 		if (x<=0) {
 
 			xv*=-1;
+
+			x=0;
 
 		}
 
@@ -104,6 +111,26 @@ public class Cirkel extends JComponent implements KeyListener{
 			y=y-5;
 
 		}
+
+		if (key == KeyEvent.VK_DOWN) {
+
+			y=y+5;
+
+		}
+
+		if (key == KeyEvent.VK_LEFT) {
+
+			x=x-5;
+
+		}
+		if (key == KeyEvent.VK_RIGHT) {
+
+			x=x+5;
+
+		}
+
+
+
 
 
 	}
