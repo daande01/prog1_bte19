@@ -11,7 +11,11 @@ public class personnummer {
 
 		String all=java.time.LocalDateTime.now().toString();
 
-		System.out.println(all.substring(8, 10));
+		int day = Integer.parseInt(all.substring(8, 10));
+
+
+
+
 
 	}
 
