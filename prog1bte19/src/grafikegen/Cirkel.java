@@ -25,6 +25,8 @@ public class Cirkel extends JComponent implements KeyListener{
 
 
 	public Cirkel(Color c) {
+
+
 		addKeyListener(this);
 		cc=c;
 		this.setPreferredSize(new Dimension(wx,wy));
@@ -79,8 +81,6 @@ public class Cirkel extends JComponent implements KeyListener{
 
 
 
-
-
 	}
 	@Override
 	public void paint(Graphics g) {
@@ -91,18 +91,12 @@ public class Cirkel extends JComponent implements KeyListener{
 
 	}
 
-	public static void main(String[] args) {
 
-		JFrame j = new JFrame();
-		j.setLayout(new FlowLayout());
-		j.setContentPane(new Cirkel(Color.CYAN));
-		j.setVisible(true);
-		j.pack();
-
-		j.setDefaultCloseOperation(j.EXIT_ON_CLOSE);
-	}
 	@Override
 	public void keyPressed(KeyEvent e) {
+
+
+		System.out.println(this.getComponentAt(x, y).toString());
 
 		int key = e.getKeyCode();
 
@@ -151,6 +145,17 @@ public class Cirkel extends JComponent implements KeyListener{
 		return true;
 	}
 
+	public static void main(String[] args) {
 
+		JFrame j = new JFrame();
+		j.setLayout(new FlowLayout());
+		Cirkel cc= new Cirkel(Color.cyan);
+		j.setContentPane(cc);
+		j.setVisible(true);
+		j.pack();
+
+
+		j.setDefaultCloseOperation(j.EXIT_ON_CLOSE);
+	}
 
 }

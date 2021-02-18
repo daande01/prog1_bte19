@@ -1,6 +1,7 @@
 package grafikegen.bollar;
 
 import java.awt.Color;
+import java.awt.Graphics;
 
 public class Boll {
 
@@ -30,6 +31,22 @@ public class Boll {
 	public int yToInt() {
 		return (int) Math.round(y);
 	}
+
+	public void rita(Graphics g) {
+
+		g.setColor(c);
+		g.fillOval(xToInt(), yToInt(), r*2, r*2);
+	}
+
+	public void update() {
+
+		x=x+xv;
+		y=y+yv;
+
+
+	}
+
+
 
 
 }
