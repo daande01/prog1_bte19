@@ -11,49 +11,54 @@ import javax.swing.Timer;
 
 public class Spelplan extends JComponent {
 
-
-	Boll b1 ;
-	Boll b2 ;
-
+	Boll[] b = new Boll[100];
 
 	public Spelplan() {
 
-		this.setPreferredSize(new Dimension(500,500));
+		this.setPreferredSize(new Dimension(500, 500));
 
-		b1= new Boll((int)(Math.random()*500),
-				(int)(Math.random()*500),
-				(int)(Math.random()*100+20),
-				new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)),
-				(int)(Math.random()*2),
-				(int)(Math.random()*2));
+		for (int i = 0; i < b.length; i++) {
+
+			b[i] = new Boll((int) (Math.random() * 500),
+					(int) (Math.random() * 500),
+					(int) (Math.random() * 100 + 20),
+					new Color((int) (Math.random() * 255),
+							(int) (Math.random() * 255),
+							(int) (Math.random() * 255)),
+					(int) (Math.random() * 3 + 1),
+					(int) (Math.random() * 3 + 1));
+
+		}
+
+		Timer t = new Timer(20, e -> {
+
+			for (Boll boll : b) {
+
+				boll.update();
+			}
 
 
-				Timer t=new Timer(20,e->{
+			repaint();
+		});
 
-					b1.update();
-					repaint();
-				}) ;
-
-					t.start();
+		t.start();
 
 	}
-
-
 
 	@Override
 	protected void paintComponent(Graphics g) {
 
 		super.paintComponent(g);
-		b1.rita(g);
+
+		for (Boll boll : b) {
+
+			boll.rita(g);
+		}
+
 
 	}
 
-
-
-
-
 	public static void main(String[] args) {
-
 
 		JFrame f = new JFrame();
 		f.setLayout(new FlowLayout());
@@ -61,10 +66,6 @@ public class Spelplan extends JComponent {
 		f.setVisible(true);
 		f.pack();
 
-
-
-
 	}
-
 
 }
