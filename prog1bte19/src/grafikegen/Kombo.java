@@ -27,10 +27,13 @@ public class Kombo extends JComponent {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
 		g.fillRect(x, y, 50, 50);
+		g.drawString("d", 100, 100);
 
 	}
 
 	public static void main(String[] args) {
+
+
 		Kombo k= new Kombo();
 		JFrame f = new JFrame();
 		JButton b = new JButton("move");
